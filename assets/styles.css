@@ -118,6 +118,11 @@ details p { margin: 0 0 18px; color: var(--muted); }
   .cards { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
 }
+@media (max-width: 900px) {
+  .nav-toggle { display: block; }
+  .nav { display: none; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; background: var(--ink); }
+  .nav.open { display: flex; }
+}
 @media (max-width: 720px) {
   .nav-toggle { display: block; }
   .nav { display: none; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; background: var(--ink); }
