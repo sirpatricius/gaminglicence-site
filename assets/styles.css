@@ -24,7 +24,7 @@ img { max-width: 100%; }
 .site-header { position: sticky; top: 0; z-index: 10; background: rgba(15, 27, 45, .96); backdrop-filter: blur(8px); color: #fff; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand-mark { display: block; flex: none; width: 36px; height: 36px; }
+.brand-mark { display: block; flex: none; object-fit: contain; }
 .brand-text { font-family: var(--serif); font-size: 19px; }
 .brand-text em { font-style: normal; color: var(--brass-2); margin-left: 4px; }
 .nav { display: flex; align-items: center; gap: 26px; font-size: 15px; }
