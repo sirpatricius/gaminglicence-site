@@ -1,6 +1,6 @@
 const number = new URLSearchParams(location.search).get('number');
 const message = document.getElementById('record-message');
-const dateFormat = new Intl.DateTimeFormat('tr-TR', { dateStyle: 'long', timeZone: 'UTC' });
+const dateFormat = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' });
 
 function showMessage(text) {
   message.textContent = text;
@@ -16,9 +16,9 @@ function setDate(id, value) {
 if (number !== null) {
   document.getElementById('record-number').value = number;
   if (!/^[0-9]{5,12}$/.test(number)) {
-    showMessage('Geçerli bir danışmanlık kayıt numarası girin.');
+    showMessage('Enter a valid advisory record number.');
   } else {
-    showMessage('Kayıt sorgulanıyor…');
+    showMessage('Looking up the record…');
     try {
       const response = await fetch(new URL('advisory-records.json', import.meta.url), { cache: 'no-cache' });
       if (!response.ok) throw new Error('Record file unavailable');
@@ -34,10 +34,10 @@ if (number !== null) {
         document.getElementById('record').hidden = false;
         showMessage('');
       } else {
-        showMessage('Bu numarayla eşleşen bir danışmanlık kaydı bulunamadı.');
+        showMessage('No advisory record matches this number.');
       }
     } catch {
-      showMessage('Kayıtlar şu anda yüklenemedi. Biraz sonra tekrar deneyin.');
+      showMessage('Advisory records could not be loaded. Please try again later.');
     }
   }
 }

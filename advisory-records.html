@@ -1,50 +1,51 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danışmanlık Kaydı | GamingLicence Advisory</title>
-<meta name="description" content="GamingLicence Advisory danışmanlık kayıtlarını kayıt numarasına göre sorgulayın.">
+<title>Advisory Record Verification | Gaming Licence UK</title>
+<meta name="description" content="Look up a Gaming Licence UK advisory record by record number.">
 <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
 <link rel="stylesheet" href="assets/styles.css?v=4">
-<link rel="stylesheet" href="assets/advisory-records.css?v=2">
-<script type="module" src="assets/advisory-records.js?v=1"></script>
+<link rel="stylesheet" href="assets/advisory-records.css?v=3">
+<script type="module" src="assets/advisory-records.js?v=2"></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a href="index.html" class="brand">
-      <img class="brand-mark" src="assets/royal-arms.png?v=2" width="48" height="44" alt="">
-      <span class="brand-text">GamingLicence Advisory</span>
-    </a>
-    <a class="advisory-home" href="index.html">Ana sayfa</a>
-  </div>
-</header>
 <main class="wrap narrow advisory-records">
-  <h1>Danışmanlık Kaydı</h1>
-  <noscript><p>Kayıt sorgulamak için tarayıcınızda JavaScript’i etkinleştirin.</p></noscript>
-  <p id="record-message" class="advisory-message" aria-live="polite" hidden></p>
-  <section id="record" class="advisory-result" aria-labelledby="record-name" hidden>
-    <div class="advisory-result-header">
+  <a class="advisory-home" href="index.html"><span aria-hidden="true">←</span> Home</a>
+  <section class="advisory-sheet" aria-labelledby="advisory-title">
+    <header class="advisory-masthead">
+      <img src="assets/royal-arms.png?v=2" width="88" height="82" alt="">
+      <div>
+        <p>Gaming Licence UK</p>
+        <h1 id="advisory-title">Advisory Record Verification</h1>
+      </div>
+    </header>
+    <noscript><p class="advisory-message">Enable JavaScript to look up a record.</p></noscript>
+    <p id="record-message" class="advisory-message" aria-live="polite" hidden></p>
+    <section id="record" class="advisory-result" aria-labelledby="record-name" hidden>
       <h2 id="record-name"></h2>
-      <span class="advisory-status"><span aria-hidden="true">✓</span> <span>Kayıt bulundu</span></span>
-    </div>
-    <dl class="advisory-facts">
-      <div><dt>Danışmanlık kayıt numarası</dt><dd id="record-id"></dd></div>
-      <div><dt>Kayıtlı alan adı</dt><dd id="record-domain"></dd></div>
-      <div><dt>Kayıt başlangıcı</dt><dd><time id="record-start"></time></dd></div>
-      <div><dt>Kayıt bitişi</dt><dd><time id="record-end"></time></dd></div>
-    </dl>
-    <div class="advisory-licence">
-      <h3>Resmî lisans bilgisi</h3>
-      <p>Bu kayıt için resmî lisans bağlantısı paylaşılmadı. Bahis lisansının durumunu lisansı düzenleyen kurumun kaydından doğrulayabilirsiniz.</p>
-    </div>
+      <dl class="advisory-facts">
+        <div><dt>Registered website</dt><dd id="record-domain"></dd></div>
+        <div><dt>Advisory record number</dt><dd id="record-id"></dd></div>
+        <div><dt>Record start date</dt><dd><time id="record-start"></time></dd></div>
+        <div><dt>Record end date</dt><dd><time id="record-end"></time></dd></div>
+      </dl>
+      <div class="advisory-status">
+        <span>Advisory record status</span>
+        <strong><span aria-hidden="true">✓</span> <span>Record found</span></strong>
+      </div>
+      <div class="advisory-licence">
+        <h3>Official gambling licence</h3>
+        <p><strong>Not verified.</strong> Check gambling licence status in the issuing regulator’s register.</p>
+      </div>
+    </section>
   </section>
   <form class="form advisory-lookup" method="get" action="advisory-records.html">
-    <label for="record-number">Danışmanlık kayıt numarası
+    <label for="record-number">Advisory record number
       <input id="record-number" name="number" inputmode="numeric" pattern="[0-9]{5,12}" maxlength="12" required>
     </label>
-    <button class="btn" type="submit">Kaydı sorgula</button>
+    <button class="btn" type="submit">Look up record</button>
   </form>
 </main>
 </body>
