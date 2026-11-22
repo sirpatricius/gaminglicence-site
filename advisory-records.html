@@ -7,39 +7,45 @@
 <meta name="description" content="GamingLicence Advisory danışmanlık kayıtlarını kayıt numarasına göre sorgulayın.">
 <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
 <link rel="stylesheet" href="assets/styles.css?v=4">
-<link rel="stylesheet" href="assets/advisory-records.css?v=1">
+<link rel="stylesheet" href="assets/advisory-records.css?v=2">
 <script type="module" src="assets/advisory-records.js?v=1"></script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="index.html" class="brand"><span class="brand-text">GamingLicence Advisory</span></a>
+    <a href="index.html" class="brand">
+      <img class="brand-mark" src="assets/royal-arms.png?v=2" width="48" height="44" alt="">
+      <span class="brand-text">GamingLicence Advisory</span>
+    </a>
+    <a class="advisory-home" href="index.html">Ana sayfa</a>
   </div>
 </header>
-<main class="legal wrap narrow advisory-records">
+<main class="wrap narrow advisory-records">
   <h1>Danışmanlık Kaydı</h1>
-  <p>Bu sayfa GamingLicence Advisory danışmanlık kayıtlarını gösterir. Resmî bahis lisanslarını ilgili düzenleyici kurum verir.</p>
+  <noscript><p>Kayıt sorgulamak için tarayıcınızda JavaScript’i etkinleştirin.</p></noscript>
+  <p id="record-message" class="advisory-message" aria-live="polite" hidden></p>
+  <section id="record" class="advisory-result" aria-labelledby="record-name" hidden>
+    <div class="advisory-result-header">
+      <h2 id="record-name"></h2>
+      <span class="advisory-status"><span aria-hidden="true">✓</span> <span>Kayıt bulundu</span></span>
+    </div>
+    <dl class="advisory-facts">
+      <div><dt>Danışmanlık kayıt numarası</dt><dd id="record-id"></dd></div>
+      <div><dt>Kayıtlı alan adı</dt><dd id="record-domain"></dd></div>
+      <div><dt>Kayıt başlangıcı</dt><dd><time id="record-start"></time></dd></div>
+      <div><dt>Kayıt bitişi</dt><dd><time id="record-end"></time></dd></div>
+    </dl>
+    <div class="advisory-licence">
+      <h3>Resmî lisans bilgisi</h3>
+      <p>Bu kayıt için resmî lisans bağlantısı paylaşılmadı. Bahis lisansının durumunu lisansı düzenleyen kurumun kaydından doğrulayabilirsiniz.</p>
+    </div>
+  </section>
   <form class="form advisory-lookup" method="get" action="advisory-records.html">
     <label for="record-number">Danışmanlık kayıt numarası
       <input id="record-number" name="number" inputmode="numeric" pattern="[0-9]{5,12}" maxlength="12" required>
     </label>
     <button class="btn" type="submit">Kaydı sorgula</button>
   </form>
-  <noscript><p>Kayıt sorgulamak için tarayıcınızda JavaScript’i etkinleştirin.</p></noscript>
-  <p id="record-message" aria-live="polite" hidden></p>
-  <section id="record" class="advisory-result" aria-labelledby="record-name" aria-live="polite" hidden>
-    <h2 id="record-name"></h2>
-    <dl>
-      <dt>Kayıt numarası</dt>
-      <dd id="record-id"></dd>
-      <dt>Alan adı</dt>
-      <dd id="record-domain"></dd>
-      <dt>Kayıt başlangıcı</dt>
-      <dd><time id="record-start"></time></dd>
-      <dt>Kayıt bitişi</dt>
-      <dd><time id="record-end"></time></dd>
-    </dl>
-  </section>
 </main>
 </body>
 </html>
