@@ -1,0 +1,14 @@
+.advisory-lookup { grid-template-columns: minmax(0, 1fr) auto; align-items: end; margin: 28px 0; }
+.advisory-lookup button { min-height: 49px; }
+.advisory-result { padding: 24px 32px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.advisory-result h2 { margin: 0 0 16px; font-size: 28px; }
+.advisory-result dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; margin: 0; }
+.advisory-result dt { color: var(--muted); }
+.advisory-result dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+
+@media (max-width: 480px) {
+  .advisory-records h1 { font-size: 34px; }
+  .advisory-lookup { grid-template-columns: 1fr; padding: 20px; }
+  .advisory-result { padding: 20px; }
+  .advisory-result dl { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 10px 12px; }
+}
