@@ -1,59 +1,65 @@
-.advisory-home { flex: none; color: inherit; font-size: 14px; text-underline-offset: 4px; }
-.advisory-records { padding: 54px 0 80px; }
-.advisory-records h1 { font-size: clamp(32px, 5vw, 48px); }
-.advisory-message { margin: 24px 0 0; color: var(--muted); }
-.advisory-result {
-  margin-top: 26px;
+.advisory-records { padding: 38px 0 72px; }
+.advisory-home { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 16px; color: var(--ink); font-size: 14px; text-underline-offset: 4px; }
+.advisory-sheet {
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--line);
-  border-top: 3px solid var(--brass);
   border-radius: var(--radius);
   box-shadow: 0 16px 38px rgba(15, 27, 45, .06);
 }
-.advisory-result-header {
+.advisory-masthead {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px 18px;
-  padding: 26px 32px 22px;
-  border-bottom: 1px solid var(--line);
+  gap: 24px;
+  padding: 22px 32px;
+  color: #fff;
+  background: var(--ink);
+  border-bottom: 3px solid var(--brass);
 }
-.advisory-result h2 { font-size: clamp(27px, 4vw, 34px); overflow-wrap: anywhere; }
-.advisory-status {
-  padding: 4px 10px;
-  background: #e7f4ec;
-  color: #1d583a;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 600;
-}
-.advisory-facts { margin: 0; padding: 0 32px; }
+.advisory-masthead img { flex: none; object-fit: contain; }
+.advisory-masthead p { margin: 0 0 3px; color: var(--brass-2); font-weight: 600; }
+.advisory-masthead h1 { font-size: clamp(25px, 4.3vw, 39px); }
+.advisory-message { margin: 0; padding: 18px 32px; color: var(--muted); }
+.advisory-result { padding: 24px 32px; }
+.advisory-result h2 { font-size: 27px; margin-bottom: 8px; overflow-wrap: anywhere; }
+.advisory-facts { margin: 0; }
 .advisory-facts > div {
   display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
   align-items: baseline;
   gap: 6px 20px;
-  padding: 14px 0;
+  padding: 13px 0;
   border-bottom: 1px solid var(--line);
 }
 .advisory-facts > div:last-child { border-bottom: 0; }
 .advisory-facts dt { color: var(--muted); }
 .advisory-facts dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
-.advisory-licence { padding: 20px 32px 22px; border-top: 1px solid var(--line); background: #fbfaf7; }
-.advisory-licence h3 { font-size: 19px; }
-.advisory-licence p { max-width: 62ch; margin: 6px 0 0; color: var(--muted); font-size: 14px; }
-.advisory-lookup { grid-template-columns: minmax(0, 1fr) auto; align-items: end; margin: 24px 0 0; }
+.advisory-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 16px 0 0;
+  padding: 11px 14px;
+  background: #e7f4ec;
+  color: #1d583a;
+  border: 1px solid #c9e7d4;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.advisory-licence { margin-top: 19px; }
+.advisory-licence h3 { font-size: 18px; }
+.advisory-licence p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+.advisory-lookup { grid-template-columns: minmax(0, 1fr) auto; align-items: end; margin: 20px 0 0; }
 .advisory-lookup button { min-height: 49px; }
 
 @media (max-width: 480px) {
-  .advisory-records { padding: 32px 0 48px; }
-  .site-header .header-inner { gap: 12px; }
-  .site-header .brand-text { font-size: 16px; }
-  .advisory-lookup { grid-template-columns: 1fr; padding: 20px; }
-  .advisory-result-header, .advisory-licence { padding: 18px 20px; }
-  .advisory-facts { padding: 0 20px; }
-  .advisory-facts > div { grid-template-columns: minmax(0, 1fr); padding: 10px 0; gap: 0; }
-  .advisory-facts dt { font-size: 14px; }
+  .advisory-records { padding: 22px 0 48px; }
+  .advisory-masthead { gap: 12px; padding: 16px; }
+  .advisory-masthead img { width: 54px; height: 51px; }
+  .advisory-masthead p { font-size: 13px; }
+  .advisory-result, .advisory-message { padding: 18px 16px; }
+  .advisory-facts > div { gap: 4px 10px; padding: 10px 0; font-size: 14px; }
+  .advisory-lookup { grid-template-columns: 1fr; padding: 16px; }
 }
