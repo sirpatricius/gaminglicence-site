@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
 <link rel="stylesheet" href="assets/styles.css?v=4">
 <link rel="stylesheet" href="assets/advisory-records.css?v=3">
-<script type="module" src="assets/advisory-records.js?v=2"></script>
+<script type="module" src="assets/advisory-records.js?v=3"></script>
 </head>
 <body>
 <main class="wrap narrow advisory-records">
@@ -34,18 +34,8 @@
       <div class="advisory-status">
         <strong><span aria-hidden="true">&#10003;</span> LİCENSED</strong>
       </div>
-      <div class="advisory-licence">
-        <h3>Official gambling licence</h3>
-        <p><strong>Not verified.</strong> Check gambling licence status in the issuing regulator’s register.</p>
-      </div>
     </section>
   </section>
-  <form class="form advisory-lookup" method="get" action="advisory-records.html">
-    <label for="record-number">Advisory record number
-      <input id="record-number" name="number" inputmode="numeric" pattern="[0-9]{5,12}" maxlength="12" required>
-    </label>
-    <button class="btn" type="submit">Look up record</button>
-  </form>
 </main>
 </body>
 </html>

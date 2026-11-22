@@ -14,7 +14,6 @@ function setDate(id, value) {
 }
 
 if (number !== null) {
-  document.getElementById('record-number').value = number;
   if (!/^[0-9]{5,12}$/.test(number)) {
     showMessage('Enter a valid advisory record number.');
   } else {
