@@ -30,6 +30,9 @@ if (number !== null) {
         document.getElementById('record-domain').textContent = record.domain;
         setDate('record-start', record.startDate);
         setDate('record-end', record.endDate);
+        if (record.statusLabel) {
+          document.getElementById('record-status-label').textContent = record.statusLabel;
+        }
         document.getElementById('record').hidden = false;
         showMessage('');
       } else {
